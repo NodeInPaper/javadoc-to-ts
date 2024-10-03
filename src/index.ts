@@ -8,7 +8,7 @@ const AllClassesIndexURL = "https://docs.oracle.com/en/java/javase/21/docs/api/a
 
 })();
 
-async function resolveClass(url: string) {
+async function resolveObject(url: string) {
   const { window: { document } } = await JSDOM.fromURL(url);
 
   const modulePath = document.querySelector('main .sub-title [href*="module"]').textContent;
