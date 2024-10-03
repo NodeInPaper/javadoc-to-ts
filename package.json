@@ -8,7 +8,16 @@
     "test": "tsx src/test.ts",
     "build": "tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "javadoc",
+    "typescript",
+    "java",
+    "documentation",
+    "ts",
+    "js",
+    "java-to-ts",
+    "javadoc-to-ts"
+  ],
   "author": {
     "name": "Kıraç Armağan Önal",
     "email": "kiracarmaganonal@gmail.com"
