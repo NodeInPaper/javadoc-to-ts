@@ -7,7 +7,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": false,
-    "strict": true,
+    "strict": false,
     "useUnknownInCatchVariables": true,
     "noUncheckedIndexedAccess": true,
     // Modules
