@@ -1,0 +1,33 @@
+{
+  "name": "javadoc-to-ts",
+  "version": "0.0.1",
+  "description": "A simple* tool to convert JavaDoc to TypeScript",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "test": "tsx src/test.ts",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Kıraç Armağan Önal",
+    "email": "kiracarmaganonal@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NodeInPaper/javadoc-to-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NodeInPaper/javadoc-to-ts/issues"
+  },
+  "homepage": "https://github.com/NodeInPaper/javadoc-to-ts#readme",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@types/node": "^22.7.4",
+    "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.12",
+    "tsx": "^4.19.1"
+  }
+}
