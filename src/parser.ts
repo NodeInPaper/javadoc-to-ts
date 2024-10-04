@@ -101,7 +101,7 @@ export async function resolveObject(url: string) {
   const dom = await fetchHTMLRetry(url);
   const document = dom.window.document;
 
-  const modulePath = document.querySelector('main .sub-title [href*="module"]').textContent;
+  const modulePath = document.querySelector('main .sub-title [href*="module"]')?.textContent || null;
   const packagePath = document.querySelector('main .sub-title [href*="package"]').textContent;
   const modifiers = document.querySelector(".class-description > .type-signature > .modifiers").textContent.split(" ").filter(Boolean);
   const name = document.querySelector(".class-description > .type-signature > .type-name-label").textContent.replace(/<.+>/, "").trim();
@@ -116,7 +116,7 @@ export async function resolveObject(url: string) {
 
   const implementedInterfaces = [...(document.querySelectorAll('.type-signature > .extends-implements [title^="interface in"]') as NodeListOf<HTMLAnchorElement>)].map(objectLinkToPath);
 
-  const description = clean(document.querySelector(".class-description > .block").textContent.trim());
+  const description = clean(document.querySelector(".class-description > .block")?.textContent?.trim()) || null;
 
   const notesElm = document.querySelector(".class-description .notes");
 

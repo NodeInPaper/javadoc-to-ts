@@ -4,7 +4,7 @@ import util from "util";
 import { quickForEach } from "async-and-quick";
 import fs from "fs";
 
-const AllClassesIndexURL = "https://docs.oracle.com/en/java/javase/21/docs/api/allclasses-index.html";
+const AllClassesIndexURL = "https://jd.papermc.io/paper/1.21.1/allclasses-index.html";
 
 (async () => {
   const { window: { document } } = await JSDOM.fromURL(AllClassesIndexURL);
