@@ -1,6 +1,5 @@
 import { JSDOM } from "jsdom";
 import { resolveObject } from "./parser";
-import util from "util";
 import { quickForEach } from "async-and-quick";
 import fs from "fs";
 
