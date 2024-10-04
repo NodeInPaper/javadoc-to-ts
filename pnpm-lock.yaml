@@ -11,6 +11,9 @@ importers:
       '@types/node':
         specifier: ^22.7.4
         version: 22.7.4
+      async-and-quick:
+        specifier: ^1.0.2
+        version: 1.0.2
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -190,8 +193,15 @@ packages:
     resolution: {integrity: sha512-H0TSyFNDMomMNJQBn8wFV5YC/2eJ+VXECwOadZJT554xP6cODZHPX3H9QMQECxvrgiSOP1pHjy1sMWQVYJOUOA==}
     engines: {node: '>= 14'}
 
+  async-and-quick@1.0.2:
+    resolution: {integrity: sha512-xALyAv1NGiyfGaQ5TEGMrzPS6CfvC3ItelP0s6XgULZkYQKa66MjR9qTM0o+tJjNmDRr80WszKuUKjrrgC84lQ==}
+
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
+
+  chillout@5.0.0:
+    resolution: {integrity: sha512-xCyFUOrkOVBSaZ1pKXUZcrKhMsPkWh4jWPa9rp4zE+wHE5h4NTO7z8K5rLhV989dtQatDOoMhTe9Vi2S96QEhQ==}
+    engines: {node: '>=8.10.0'}
 
   combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
@@ -470,7 +480,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  async-and-quick@1.0.2:
+    dependencies:
+      chillout: 5.0.0
+
   asynckit@0.4.0: {}
+
+  chillout@5.0.0: {}
 
   combined-stream@1.0.8:
     dependencies:
