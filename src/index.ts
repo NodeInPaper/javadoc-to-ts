@@ -21,6 +21,11 @@ function getNote(elm: Element, title: string): Element[] {
   return elms;
 }
 
+function clean(str: string) {
+  if (!str) return str;
+  return str.replace(/\s+/g, " ").trim();
+}
+
 async function resolveObject(url: string) {
   const { window: { document } } = await JSDOM.fromURL(url);
 
@@ -40,11 +45,11 @@ async function resolveObject(url: string) {
     return `${title.pop()}.${elm.textContent.trim()}`;
   });
 
-  const description = document.querySelector(".class-description > .block").textContent.trim();
+  const description = clean(document.querySelector(".class-description > .block").textContent.trim());
 
   const notesElm = document.querySelector(".class-description .notes");
 
-  const since = getNote(notesElm, "Since:")[0]?.textContent || "N/A";
+  const since = getNote(notesElm, "Since:")[0]?.textContent || null;
 
   // TODO: Constructor Details, Method Details
 
@@ -64,17 +69,20 @@ async function resolveObject(url: string) {
       // TODO: parse constructor parameters with types
       return {
         modifiers: i.querySelector(".member-signature .modifiers").textContent.split(" ").filter(Boolean),
-        description: i.querySelector(".block").textContent.trim(),
+        description: clean(i.querySelector(".block").textContent.trim()),
         ...(notesElm ? {
-          apiNote: getNote(notesElm, "API Note:")[0]?.textContent?.replace?.(/\s+/g, " ") || null,
+          apiNote: clean(getNote(notesElm, "API Note:")[0]?.textContent) || null,
           throws: getNote(notesElm, "Throws:").map(t => {
             const a = t.querySelector("code a") as HTMLAnchorElement;
             return {
               name: `${a.title.split(" ").pop()}.${a.textContent.trim()}`,
-              description: t.textContent.split(" - ")[1].replace(/\s+/g, " ")
+              description: clean(t.textContent.split(" - ")[1])
             }
           })
-        } : {})
+        } : {
+          apiNote: null,
+          throws: []
+        })
       };
     }),
   }
