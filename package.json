@@ -4,7 +4,8 @@
   "description": "A simple* tool to convert JavaDoc to TypeScript",
   "main": "src/index.ts",
   "scripts": {
-    "start": "tsx --expose-gc src/index.ts",
+    "resolveFullIndex": "tsx --expose-gc src/resolveFullIndex.ts",
+    "converter": "tsx --expose-gc src/converter.ts",
     "test": "tsx src/test.ts",
     "build": "tsc"
   },
@@ -35,6 +36,7 @@
     "@types/node": "^22.7.4",
     "async-and-quick": "^1.0.2",
     "jsdom": "^25.0.1",
+    "stuffs": "^0.1.42",
     "typescript": "^5.6.2"
   },
   "devDependencies": {
